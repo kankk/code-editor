@@ -2,9 +2,8 @@
 </script>
 
 <template>
-  <router-view />
+  <div />
 </template>
 
 <style>
-@import url("@styles/index.scss");
 </style>

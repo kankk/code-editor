@@ -2,9 +2,10 @@
 </script>
 
 <template>
-  <router-view />
+  <div>
+    <span>代码编辑器</span>
+  </div>
 </template>
 
 <style>
-@import url("@styles/index.scss");
 </style>
