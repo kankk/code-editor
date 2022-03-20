@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import {
+  ref, provide, PropType,
+} from 'vue';
+import type { IFiles } from './utils/types';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
 import Menu from './Menu.vue';
@@ -7,6 +11,9 @@ import EditorTool from './EditorTool.vue';
 import Editor from './Editor.vue';
 import Console from './Console.vue';
 import { useSize } from './utils/useSize';
+import { buildFiles } from './utils/builder';
+
+import { CeWorkbenchKey } from './utils/key';
 
 const {
   ceHeaderHeight,
@@ -20,6 +27,22 @@ const {
   ceEditorWidth,
   ceEditorHeight,
 } = useSize();
+
+const props = defineProps({
+  files: {
+    type: Array as PropType<IFiles>,
+    default: () => ([]),
+  },
+});
+
+const files = ref(buildFiles(props.files));
+// watch(props.files, (newFiles) => {
+//   files.value = cloneDeep(newFiles);
+// });
+
+provide(CeWorkbenchKey, {
+  files,
+});
 
 </script>
 

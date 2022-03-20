@@ -14,6 +14,9 @@ module.exports = {
     browser: true,
   },
   globals: {
+    defineProps: 'readonly',
+    defineEmits: 'readonly',
+    defineExpose: 'readonly',
   },
   extends: [
     'plugin:vue/vue3-recommended',

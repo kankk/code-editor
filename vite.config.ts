@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 import monacoEdtorPlugin from 'vite-plugin-monaco-editor';
 
 import * as path from 'path';
@@ -15,10 +16,12 @@ export default defineConfig({
       '@store': path.resolve(__dirname, 'src/store'),
       '@utils': path.resolve(__dirname, 'src/utils'),
       '@components': path.join(__dirname, 'src/components'),
+      '@mock': path.join(__dirname, 'src/mock'),
     },
   },
   plugins: [
     vue(),
+    vueJsx({}),
     monacoEdtorPlugin(),
   ],
 });

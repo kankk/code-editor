@@ -17,6 +17,7 @@
       "@components/*": ["./src/components/*"],
       "@store/*": ["./src/store/*"],
       "@utils/*": ["./src/utils/*"],
+      "@mock/*": ["./src/mock/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
